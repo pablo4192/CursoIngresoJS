@@ -10,5 +10,46 @@ E.	Si el importe final con descuento suma más de $120  se debe sumar un 10% de 
  */
 function CalcularPrecio () 
 {
- 	
+	var precio;
+	var cantidad;
+	var marca;
+	var precioConDescuento;
+	var precioConDescuentoArgentina;
+
+	precio = 35;
+	cantidad = txtIdCantidad.value;
+	cantidad = parseInt(cantidad);
+	marca = Marca.value;
+	
+
+	descuento6oMas = precio * 0.5;
+    precioConDescuento = precio - descuento6oMas;
+
+    descuento5Argentina = precio * 0.4;
+    precioConDescuentoArgentina = precio - descuento5Argentina;
+
+    descuentoDel30 = precio * 0.3;
+    precioDescuentoDel30 = precio - descuentoDel30;
+
+	if(cantidad >5)
+	{
+    	txtIdprecioDescuento.value = precioConDescuento * cantidad;
+	}
+	
+	if(cantidad == 5)
+	{
+		txtIdprecioDescuento.value = precioDescuentoDel30 * cantidad;
+		else
+		{
+        	if(marca == "ArgentinaLuz")
+			{
+				txtIdprecioDescuento.value = precioConDescuentoArgentina * cantidad;
+			}
+		}
+	}
+	else
+	{
+		txtIdprecioDescuento.value = precio * cantidad;		
+	}
 }
+//
