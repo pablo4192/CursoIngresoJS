@@ -1,3 +1,4 @@
+// Estanguet Pablo 1H ej 04 A,B
 /*4.	Para el departamento de iluminación:
 Tomando en cuenta que todas las lámparas están en oferta al mismo precio de $35 pesos final.
 A.	Si compra 6 o más  lamparitas bajo consumo tiene un descuento del 50%. 
@@ -10,46 +11,66 @@ E.	Si el importe final con descuento suma más de $120  se debe sumar un 10% de 
  */
 function CalcularPrecio () 
 {
+	//declaracion de variable
 	var precio;
 	var cantidad;
 	var marca;
-	var precioConDescuento;
-	var precioConDescuentoArgentina;
-
+	//var descuento??	
+	//inicializacion de la variable
 	precio = 35;
+	//lectura de variables
 	cantidad = txtIdCantidad.value;
-	cantidad = parseInt(cantidad);
 	marca = Marca.value;
+	precioFinal = cantidad * precio; 
 	
+	cantidad = parseInt(cantidad);
+
+	txtIdprecioDescuento.value = precioFinal;
+
+
 
 	descuento6oMas = precio * 0.5;
-    precioConDescuento = precio - descuento6oMas;
+	precioConDescuento6oMas = precio - descuento6oMas;
 
-    descuento5Argentina = precio * 0.4;
-    precioConDescuentoArgentina = precio - descuento5Argentina;
+	descuento5Argentina = precio * 0.4;
+	precioConDescuentoArgentina = precio - descuento5Argentina;
 
-    descuentoDel30 = precio * 0.3;
-    precioDescuentoDel30 = precio - descuentoDel30;
+	descuento30porciento = precio * 0.3;
+	precioConDescuentoDel30 = precio - descuento30porciento;
+
+	descuento25porciento = precio * 0.25;
+	precioConDescuentoDel25 = precio - descuento25porciento;
+
+	descuento20porciento = precio *0.2;
+	precioConDescuentoDel20 = precio - descuento20porciento;
 
 	if(cantidad >5)
 	{
-    	txtIdprecioDescuento.value = precioConDescuento * cantidad;
+		txtIdprecioDescuento.value = precioConDescuento6oMas * cantidad;		
 	}
-	
+
 	if(cantidad == 5)
 	{
-		txtIdprecioDescuento.value = precioDescuentoDel30 * cantidad;
-		else
+		if(marca == "ArgentinaLuz")
 		{
-        	if(marca == "ArgentinaLuz")
-			{
-				txtIdprecioDescuento.value = precioConDescuentoArgentina * cantidad;
-			}
+			txtIdprecioDescuento.value = precioConDescuentoArgentina * cantidad;
 		}
-	}
 	else
 	{
-		txtIdprecioDescuento.value = precio * cantidad;		
+		txtIdprecioDescuento.value = precioConDescuentoDel30 * cantidad;
+	}	
 	}
+
+	if(cantidad == 4)
+	{
+		if(marca == "FelipeLamparas" || marca == "ArgentinaLuz")
+		{
+			txtIdprecioDescuento.value = precioConDescuentoDel25 * cantidad;
+		}
+	else
+	{
+		txtIdprecioDescuento.value = precioConDescuentoDel20 * cantidad;
+	}
+	}
+
 }
-//
