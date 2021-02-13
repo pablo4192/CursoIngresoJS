@@ -1,7 +1,8 @@
+
 function mostrar()
 {
-	var edad;
-	edad = txtIdEdad.value;
+    var edad;
+    txtIdEdad = txtIdEdad.value;
     edad = parseInt(edad);
 
     //var resultado;
@@ -12,13 +13,15 @@ function mostrar()
 
     if(edad == 15)//; NO ;
     {
-    	alert("niña bonita");
-	}  
+      alert("niña bonita");
+	  }
 	
 
 }//FIN DE LA FUNCIÓN
 
+/*Solucion:
 
+    }*/
 
 /*if(condicion)si se cumple se ejecutan las sentencias
 {
@@ -34,3 +37,36 @@ else si no se cumplen se ejecutan las sentencias
   Operadores logicos: && (y), || (o), ! (no)
 
 */
+/*Clase de repaso IF.
+
+var valorDeVerdad;
+var valorDeVerdad = (edad==15);
+
+if(valorDeVerdad)
+{}*/
+
+/*Forma de anidar IF ELSE:
+
+if(edad <13)
+{
+  alert("niño");
+}
+else
+{
+    if(edad<17)
+    {
+      if(edad==15)
+      {
+        alert("niña bonita")
+      }
+        alert()
+    }
+    else
+    {
+        alert()
+    }
+}*/
+
+
+
+
