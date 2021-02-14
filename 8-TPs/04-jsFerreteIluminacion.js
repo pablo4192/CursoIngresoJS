@@ -11,66 +11,84 @@ E.	Si el importe final con descuento suma más de $120  se debe sumar un 10% de 
  */
 function CalcularPrecio () 
 {
-	//declaracion de variable
 	var precio;
 	var cantidad;
 	var marca;
-	//var descuento??	
-	//inicializacion de la variable
+	var precioConDescuento;
+	//var IngresosBrutos;
+	
 	precio = 35;
-	//lectura de variables
+	
 	cantidad = txtIdCantidad.value;
 	marca = Marca.value;
-	precioFinal = cantidad * precio; 
-	
+	precioConDescuento = precio * cantidad;
+	txtIdprecioDescuento.value = precioConDescuento; 
+
+
 	cantidad = parseInt(cantidad);
 
-	txtIdprecioDescuento.value = precioFinal;
-
-
-
-	descuento6oMas = precio * 0.5;
-	precioConDescuento6oMas = precio - descuento6oMas;
-
-	descuento5Argentina = precio * 0.4;
-	precioConDescuentoArgentina = precio - descuento5Argentina;
-
-	descuento30porciento = precio * 0.3;
-	precioConDescuentoDel30 = precio - descuento30porciento;
-
-	descuento25porciento = precio * 0.25;
-	precioConDescuentoDel25 = precio - descuento25porciento;
-
-	descuento20porciento = precio *0.2;
-	precioConDescuentoDel20 = precio - descuento20porciento;
+	porcentaje50 = precio * 0.5;
+	porcentaje40 = precio * 0.4;
+	porcentaje30 = precio * 0.3;
+	porcentaje25 = precio * 0.25;
+	porcentaje20 = precio * 0.2;
+	porcentaje15 = precio * 0.15;
+	porcentaje10 = precio * 0.10;
+	porcentaje5 = precio * 0.05;
+	//IngresosBrutos = precioConDescuento * 0.1;
 
 	if(cantidad >5)
 	{
-		txtIdprecioDescuento.value = precioConDescuento6oMas * cantidad;		
+		txtIdprecioDescuento.value = (precio - porcentaje50) * cantidad;
 	}
-
-	if(cantidad == 5)
+	else
+	{
+		if(cantidad == 5)
+		{
+			if(marca == "ArgentinaLuz")
+			{
+				txtIdprecioDescuento.value = (precio - porcentaje40) * cantidad;
+			}
+			else
+			{
+				txtIdprecioDescuento.value = (precio - porcentaje30) * cantidad;
+			}
+			
+		}
+	}
+	if(cantidad == 4)
+	{
+		if(marca == "ArgentinaLuz" || marca == "FelipeLamparas")
+		{
+			txtIdprecioDescuento.value = (precio - porcentaje25) * cantidad;
+		}
+		else
+		{
+			txtIdprecioDescuento.value = (precio - porcentaje20) * cantidad;	
+		}
+	}
+	if(cantidad == 3)
 	{
 		if(marca == "ArgentinaLuz")
 		{
-			txtIdprecioDescuento.value = precioConDescuentoArgentina * cantidad;
+			txtIdprecioDescuento.value = (precio - porcentaje15) * cantidad;
 		}
-	else
-	{
-		txtIdprecioDescuento.value = precioConDescuentoDel30 * cantidad;
-	}	
-	}
-
-	if(cantidad == 4)
-	{
-		if(marca == "FelipeLamparas" || marca == "ArgentinaLuz")
+		else
 		{
-			txtIdprecioDescuento.value = precioConDescuentoDel25 * cantidad;
+			if(marca == "FelipeLamparas")
+			{
+				txtIdprecioDescuento.value = (precio - porcentaje10) * cantidad;
+			}
+			else
+			{
+				txtIdprecioDescuento.value = (precio - porcentaje5) * cantidad; 
+			}
 		}
-	else
+	}
+	/*if(txtIdprecioDescuento.value >120)
 	{
-		txtIdprecioDescuento.value = precioConDescuentoDel20 * cantidad;
-	}
-	}
+		txtIdprecioDescuento.value = precioConDescuento + IngresosBrutos;
+	}*/
+	
 
 }
