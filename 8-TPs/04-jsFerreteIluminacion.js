@@ -1,4 +1,5 @@
-// Estanguet Pablo 1H ej 04 A,B
+// Estanguet Pablo 1H TP 04 Completo.
+
 /*4.	Para el departamento de iluminación:
 Tomando en cuenta que todas las lámparas están en oferta al mismo precio de $35 pesos final.
 A.	Si compra 6 o más  lamparitas bajo consumo tiene un descuento del 50%. 
@@ -15,18 +16,18 @@ function CalcularPrecio ()
 	var cantidad;
 	var marca;
 	var precioConDescuento;
-	//var IngresosBrutos;
+	var ingresosBrutos;
+	var precioFinal;
 	
 	precio = 35;
 	
-	cantidad = txtIdCantidad.value;
-	marca = Marca.value;
-	precioConDescuento = precio * cantidad;
-	txtIdprecioDescuento.value = precioConDescuento; 
-
-
 	cantidad = parseInt(cantidad);
 
+	cantidad = txtIdCantidad.value;
+	marca = Marca.value;
+	precioFinal = precio * cantidad;
+	txtIdprecioDescuento.value = precioFinal;
+	
 	porcentaje50 = precio * 0.5;
 	porcentaje40 = precio * 0.4;
 	porcentaje30 = precio * 0.3;
@@ -35,7 +36,6 @@ function CalcularPrecio ()
 	porcentaje15 = precio * 0.15;
 	porcentaje10 = precio * 0.10;
 	porcentaje5 = precio * 0.05;
-	//IngresosBrutos = precioConDescuento * 0.1;
 
 	if(cantidad >5)
 	{
@@ -85,10 +85,15 @@ function CalcularPrecio ()
 			}
 		}
 	}
-	/*if(txtIdprecioDescuento.value >120)
-	{
-		txtIdprecioDescuento.value = precioConDescuento + IngresosBrutos;
-	}*/
-	
 
+	precioConDescuento = txtIdprecioDescuento.value;
+	precioConDescuento = parseFloat(precioConDescuento);
+	porcentajeIngresosBrutos = precioConDescuento * 0.1;
+ 	ingresosBrutos = precioConDescuento + porcentajeIngresosBrutos;
+
+	if(precioConDescuento >120)
+	{
+		txtIdprecioDescuento.value = ingresosBrutos;
+		alert("IIBB usted pago: " + porcentajeIngresosBrutos);
+	}
 }

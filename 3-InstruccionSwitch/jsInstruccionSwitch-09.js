@@ -1,7 +1,54 @@
+/*
+una agencia de viajes debe sacar las tarifas de los viajes , se cobra $15.000 por cada estadia como base, se pide el ingreso de una estacion del año y localidad para vacacionar para poder calcular el precio final
 
+en Invierno: bariloche tiene un aumento del 20% cataratas y Cordoba tiene un descuento del 10% Mar del plata tiene un descuento del 20%
+
+en Verano: bariloche tiene un descuento del 20% cataratas y Cordoba tiene un aumento del 10% Mar del plata tiene un aumento del 20%
+
+en Otoño y Primavera: bariloche tiene un aumento del 10% cataratas tiene un aumento del 10% Mar del plata tiene un aumento del 10% y Cordoba tiene el precio sin descuento
+*/
 function mostrar()
 {
-	
+	var destinoIngresado;
+	var estacionDelAño;
+	var precioEstadiaBase;
+	var precioFinal;
+
+	destinoIngresado = txtIdDestino.value;
+	estacionDelAño = txtIdEstacion.value;
+	precioEstadiaBase = 15000;
+
+	aumentoDescuento20porciento = precioEstadiaBase * 0.2;
+	aumentoDescuento10porciento = precioEstadiaBase * 0.1;
+
+	aumento20porciento = precioEstadiaBase + aumentoDescuento20porciento;
+	aumento10porciento = precioEstadiaBase + aumentoDescuento10porciento;
+	descuento20porciento = precioEstadiaBase - aumentoDescuento20porciento;
+	descuento10porciento = precioEstadiaBase - aumentoDescuento10porciento;
+
+	switch()
+	{
+		
+		case "Bariloche":
+		alert("El precio con aumento del 20% es: " + aumento20porciento);
+		break;
+		/*case "Invierno":
+		if(destinoIngresado == "Bariloche")
+		{
+			alert("El precio con aumento del 20% es " + aumento20porciento);	
+		}
+		else
+		{
+			if(destinoIngresado == "Cataratas" || destinoIngresado == "Cordoba")
+			{
+				alert("El precio con descuento del 10% es " + descuento10porciento);
+			}
+		}
+		break;*/
+
+	}
+
+
 
 }//FIN DE LA FUNCIÓN
 
