@@ -1,3 +1,4 @@
+//Estanguet Pablo 1H switch ej.09
 /*
 una agencia de viajes debe sacar las tarifas de los viajes , se cobra $15.000 por cada estadia como base, se pide el ingreso de una estacion del año y localidad para vacacionar para poder calcular el precio final
 
@@ -12,8 +13,7 @@ function mostrar()
 	var destinoIngresado;
 	var estacionDelAño;
 	var precioEstadiaBase;
-	var precioFinal;
-
+	
 	destinoIngresado = txtIdDestino.value;
 	estacionDelAño = txtIdEstacion.value;
 	precioEstadiaBase = 15000;
@@ -26,30 +26,47 @@ function mostrar()
 	descuento20porciento = precioEstadiaBase - aumentoDescuento20porciento;
 	descuento10porciento = precioEstadiaBase - aumentoDescuento10porciento;
 
-	switch()
+	switch(estacionDelAño)
 	{
-		
-		case "Bariloche":
-		alert("El precio con aumento del 20% es: " + aumento20porciento);
+		case "Invierno":
+		switch(destinoIngresado)
+		{
+			case "Bariloche":
+			alert("El precio con aumento del 20% es: " + aumento20porciento);
+			break;
+			case "Mar del plata":
+			alert("El precio con descuento del 20% es: " + descuento20porciento);
+			default:
+			alert("El precio con descuento del 10% es: " + descuento10porciento);
+		}
 		break;
-		/*case "Invierno":
-		if(destinoIngresado == "Bariloche")
-		{
-			alert("El precio con aumento del 20% es " + aumento20porciento);	
-		}
-		else
-		{
-			if(destinoIngresado == "Cataratas" || destinoIngresado == "Cordoba")
-			{
-				alert("El precio con descuento del 10% es " + descuento10porciento);
-			}
-		}
-		break;*/
 
+		case "Verano":
+		switch(destinoIngresado)
+		{
+			case "Bariloche":
+			alert("El precio con descuento del 20% es: " + descuento20porciento);
+			break;
+			case "Mar del plata":
+			alert("El precio con un aumento del 20% es: " + aumento20porciento);
+			break;
+			default:
+			alert("El precio con un aumento del 10% es: " + aumento10porciento);
+		}
+		break;
+
+		case "Otoño":
+		case "Primavera":
+		switch(destinoIngresado)
+		{
+			case "Cordoba":
+			alert("El precio es: " + precioEstadiaBase);
+			break;
+			default:
+			alert("El precio con un aumento del 10% es: " + aumento10porciento);
+		}
+		break;
 	}
-
-
-
 }//FIN DE LA FUNCIÓN
 
 	/*Estanguet Pablo 1H ej.03 Repaso if 

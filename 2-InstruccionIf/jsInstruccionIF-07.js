@@ -9,9 +9,13 @@ function mostrar()
 
 	estadocivil = estadoCivil.value;
 
-	if(edad < 18 && estadocivil != "soltero")
+	if(edad < 18)
 	{
-		alert("Usted es muy pequeño para no ser soltero");
+		if(estadocivil != "Soltero")
+		{
+			alert("Usted es muy pequeño para no ser soltero");	
+		}
+		
 	}
 	
 
