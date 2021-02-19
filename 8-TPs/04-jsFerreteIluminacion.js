@@ -16,9 +16,10 @@ function CalcularPrecio ()
 	var cantidad;
 	var marca;
 	var precioConDescuento;
-	var ingresosBrutos;
-	var precioFinal;
-	
+	//var ingresosBrutos;
+	var precioSiDescuento;
+	var descuento//asignarle valor: descuento/100
+
 	precio = 35;
 	
 	cantidad = parseInt(cantidad);
@@ -36,6 +37,61 @@ function CalcularPrecio ()
 	porcentaje15 = precio * 0.15;
 	porcentaje10 = precio * 0.10;
 	porcentaje5 = precio * 0.05;
+
+	/*switch(cantidad)
+	{
+		case 5:
+			switch(marca)
+			{
+				case "ArgentinaLuz":
+					//descuento = 40;
+				break;
+				default:
+					//descuento = 30;
+				break;
+
+			}
+			break;
+			
+			case 4:
+			switch(marca)
+			{
+				case "ArgentinaLuz":
+				case "FelipeLamparas":
+					//descuento = 25;
+					break;
+					default:
+					//descuento = 20;
+					break;
+			}
+			break;
+
+			case 3:
+			//
+			break;
+			default:
+				if(cantidad >5)
+				{
+					//descuento = 50;
+				}
+
+			break;*///Otra posibilidad con switch
+
+			/*if(marca == "ArgentinaLuz")una posibilidad con if
+			{
+				txtIdprecioDescuento.value = (precio - porcentaje40) * cantidad;
+			}
+			else
+			{
+				txtIdprecioDescuento.value = (precio - porcentaje30) * cantidad;
+			}*/
+
+
+		break;
+	}
+
+
+
 
 	if(cantidad >5)
 	{
@@ -55,7 +111,7 @@ function CalcularPrecio ()
 			}
 			
 		}
-	}
+	}//else
 	if(cantidad == 4)
 	{
 		if(marca == "ArgentinaLuz" || marca == "FelipeLamparas")
