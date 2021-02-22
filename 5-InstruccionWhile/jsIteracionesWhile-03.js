@@ -1,20 +1,30 @@
-/*
+/*Estanguet Pablo 1H EJ. 03 while
 al presionar el botón pedir la CLAVE (ayuda: es utn750)*/
 function mostrar()
 {
-	var claveIngresada;//HACER LA VALIDACION DE TRES VECES
-	claveIngresada = prompt("ingrese el número clave.");
-	var i;
+	var contadorIteraciones;
+	var claveIngresada;
 
-	i = 0;
+	contadorIteraciones = 0;
 
-	while(claveIngresada !="utn750" && i >2)
+	while(claveIngresada !="utn750" && contadorIteraciones <3)
 	{
-		claveIngresada = prompt("Error. Reingrese clave.");
-
+		claveIngresada = prompt("Ingrese su clave");
+		contadorIteraciones = contadorIteraciones +1;
 	}
 
-	alert("Ingrerso al sistema");
+	if(claveIngresada !="utn750" && contadorIteraciones >2)
+	{
+		alert("BLOQUEADO");
+	}
+	else
+	{
+		if(claveIngresada == "utn750")
+		{
+			alert("Ingreso al sistema");	
+		}
+			
+	}
 	
 }//FIN DE LA FUNCIÓN
 //Estructura Repetitiva
