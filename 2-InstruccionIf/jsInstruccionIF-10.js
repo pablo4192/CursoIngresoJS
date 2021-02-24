@@ -10,7 +10,7 @@ function mostrar()
 {
 	var resultado;
     
-	resultado = Math.floor(Math.random() * 10);
+	resultado = Math.round(Math.random() * 10);
 
     //Hardcodeo (prueba de escritorio)
     //resultado = 3;
